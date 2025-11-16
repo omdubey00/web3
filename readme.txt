@@ -9,5 +9,6 @@ Imp Points :---
    : SHA256 - one of the hashing algorithm 
    Q: what are encodings and different number like hex, octal and bit? do a bit of reading on them ;
    : we can use a crypto node module to do hashing using createHash function. also there exist a hash.startsWith(prefix) method which tells whether the hash starts with this prefix or not.  
-   :  hash.startsWith(prefix) ---> super important method we use to brute force find the a pattern of sha . like we did check git log
+   :  hash.startswith(prefix) ---> super important method we use to brute force find the a pattern of sha . like we did check git log
+   : Solving this by brute force is called proof of work . remember that as the prefix gets bigger it becomes a difficult problem and requires more cpu and stufff. 
 

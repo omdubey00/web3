@@ -6,26 +6,26 @@ const input2 = "100xdevs"
 const hash2 = crypto.createHash('sha256').update(input2).digest('hex')
 
 
-function findvalue(i) {
-	console.log(i)
+function findvalue(prefix, i) {
 	let temp = i
-	let hash = crypto.createHash('sha256').update(i.toString()).digest('hex')
-	for (let j = 0; j < 5; ++j) {
-		if (hash[j] !== '0') {
-			return false;
-		}
+	let input = prefix.toString() + i.toString()
+	console.log(input)
+	let hash = crypto.createHash('sha256').update(input).digest('hex')
+
+	if (hash.startsWith('00000')) {
+		return { input, hash };
 	}
-	return true;
+	return 0
 }
 
-let i = 596139;
+let i = 2274885;
 while (i >= 0) {
-	const result = findvalue(i)
-	if (result === true) {
-		console.log(i)
-		i = 'a'
+	const result = findvalue("100xdevs", i)
+	if (result === 0) {
+		i++;
 	}
 	else {
-		i++;
+		console.log(result)
+		i = 'a'
 	}
 }
